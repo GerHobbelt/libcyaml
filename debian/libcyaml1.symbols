@@ -1,0 +1,13 @@
+libcyaml.so.1 libcyaml1 #MINVER#
+ cyaml_free@Base 1.0.2
+ cyaml_load_data@Base 1.0.2
+ cyaml_load_file@Base 1.0.2
+ cyaml_log@Base 1.0.2
+ cyaml_mem@Base 1.0.2
+ cyaml_save_data@Base 1.0.2
+ cyaml_save_file@Base 1.0.2
+ cyaml_strerror@Base 1.0.2
+ cyaml_utf8_casecmp@Base 1.0.2
+ cyaml_utf8_get_codepoint@Base 1.0.2
+ cyaml_version@Base 1.0.2
+ cyaml_version_str@Base 1.0.2

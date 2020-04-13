@@ -1,0 +1,46 @@
+Source: libcyaml
+Priority: optional
+Maintainer: Sudip Mukherjee <sudipm.mukherjee@gmail.com>
+Build-Depends: debhelper-compat (= 12), libyaml-dev, doxygen, graphviz
+Standards-Version: 4.5.0
+Section: libs
+Homepage: https://github.com/tlsa/libcyaml
+Vcs-Browser: https://github.com/sudipm-mukherjee/libcyaml
+Vcs-Git: https://github.com/sudipm-mukherjee/libcyaml.git
+
+Package: libcyaml1
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: library to read and write YAML documents (shared library)
+ libcyaml is a C library to allow applications to construct schemas
+ which describe both the permissible structure of the YAML documents
+ to read/write, and the C data structure(s) in which the loaded data
+ is arranged in memory.
+
+Package: libcyaml-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libcyaml1 (= ${binary:Version}), ${misc:Depends}
+Description: library to read and write YAML documents (development files)
+ libcyaml is a C library to allow applications to construct schemas
+ which describe both the permissible structure of the YAML documents
+ to read/write, and the C data structure(s) in which the loaded data
+ is arranged in memory.
+ .
+ This package contains the development files for libcyaml1.
+
+Package: libcyaml-doc
+Section: doc
+Recommends: libcyaml-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: documentation for libcyaml1
+ libcyaml is a C library to allow applications to construct schemas
+ which describe both the permissible structure of the YAML documents
+ to read/write, and the C data structure(s) in which the loaded data
+ is arranged in memory.
+ .
+ This package contains the documentation for libcyaml1.
