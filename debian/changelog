@@ -1,3 +1,10 @@
+libcyaml (1.0.2-2) unstable; urgency=medium
+
+  * Fix copyright year.
+  * Add debian/watch file.
+
+ -- Sudip Mukherjee <sudipm.mukherjee@gmail.com>  Fri, 24 Apr 2020 17:56:58 +0100
+
 libcyaml (1.0.2-1) unstable; urgency=medium
 
   * Initial release (Closes: #956453)
