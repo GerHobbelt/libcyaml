@@ -4,7 +4,7 @@ Upstream-Contact: Michael Drake <tlsa@netsurf-browser.org>
 Source: https://github.com/tlsa/libcyaml
 
 Files:     *
-Copyright: 2017, 2018, 2017-2018, 2017-2019, 2017-2020, 2018-2019 Michael Drake <tlsa@netsurf-browser.org>
+Copyright: 2017-2020 Michael Drake <tlsa@netsurf-browser.org>
 License:   ISC
 
 Files:     debian/*
