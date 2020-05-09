@@ -1,1 +1,4 @@
 remove_external.patch
+0001-Data-Use-memcpy-for-data-read-write.patch
+0002-Util-Add-endian-test-helpers.patch
+0003-Data-Fix-data-read-write-on-big-endian-systems.patch

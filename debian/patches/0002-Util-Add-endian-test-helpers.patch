@@ -1,0 +1,50 @@
+From 782fa5440117db828618c2113776d7e3dad0eedd Mon Sep 17 00:00:00 2001
+From: Michael Drake <tlsa@netsurf-browser.org>
+Date: Sun, 26 Apr 2020 21:37:58 +0100
+Subject: [PATCH] Util: Add endian test helpers.
+
+---
+
+commit 782fa5440117db828618c2113776d7e3dad0eedd upstream
+
+ src/util.h | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+
+diff --git a/src/util.h b/src/util.h
+index 60adba1..f8c80cb 100644
+--- a/src/util.h
++++ b/src/util.h
+@@ -26,6 +26,30 @@
+ /** Macro to squash unused variable compiler warnings. */
+ #define CYAML_UNUSED(_x) ((void)(_x))
+ 
++/**
++ * Check whether the host is little endian.
++ *
++ * Checks whether least significant bit is in the first byte of a `uint16_t`.
++ *
++ * \return true if host is little endian.
++ */
++static inline bool cyaml__host_is_little_endian(void)
++{
++	static const uint16_t test = 1;
++
++	return ((uint8_t *) &test)[0] == 1;
++}
++
++/**
++ * Check whether the host is big endian.
++ *
++ * \return true if host is big endian.
++ */
++static inline bool cyaml__host_is_big_endian(void)
++{
++	return !cyaml__host_is_little_endian();
++}
++
+ /** CYAML bitfield type. */
+ typedef uint32_t cyaml_bitfield_t;
+ 
+-- 
+2.20.1
+

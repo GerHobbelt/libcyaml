@@ -1,0 +1,50 @@
+From ece60e5d8ec147cc282b9fa9a6fc1702d6c83390 Mon Sep 17 00:00:00 2001
+From: Michael Drake <tlsa@netsurf-browser.org>
+Date: Sun, 26 Apr 2020 21:38:28 +0100
+Subject: [PATCH] Data: Fix data read / write on big-endian systems.
+
+---
+
+commit ece60e5d8ec147cc282b9fa9a6fc1702d6c83390 upstream
+
+ src/data.h | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/src/data.h b/src/data.h
+index b511b83..17fab32 100644
+--- a/src/data.h
++++ b/src/data.h
+@@ -34,6 +34,10 @@ static inline cyaml_err_t cyaml_data_write(
+ 		return CYAML_ERR_INVALID_DATA_SIZE;
+ 	}
+ 
++	if (cyaml__host_is_big_endian()) {
++		value_bytes += sizeof(value) - entry_size;
++	}
++
+ 	memcpy(data_tgt, value_bytes, entry_size);
+ 
+ 	return CYAML_OK;
+@@ -78,13 +82,18 @@ static inline uint64_t cyaml_data_read(
+ 		cyaml_err_t *error_out)
+ {
+ 	uint64_t ret = 0;
++	uint8_t *ret_bytes = (uint8_t *)&ret;
+ 
+ 	if (entry_size == 0 || entry_size > sizeof(ret)) {
+ 		*error_out = CYAML_ERR_INVALID_DATA_SIZE;
+ 		return ret;
+ 	}
+ 
+-	memcpy(&ret, data, entry_size);
++	if (cyaml__host_is_big_endian()) {
++		ret_bytes += sizeof(ret) - entry_size;
++	}
++
++	memcpy(ret_bytes, data, entry_size);
+ 
+ 	*error_out = CYAML_OK;
+ 	return ret;
+-- 
+2.20.1
+
