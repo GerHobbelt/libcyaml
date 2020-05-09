@@ -1,3 +1,10 @@
+libcyaml (1.0.2-3) unstable; urgency=medium
+
+  * Fix build on big-endian systems.
+  * Update compat level to 13.
+
+ -- Sudip Mukherjee <sudipm.mukherjee@gmail.com>  Sat, 09 May 2020 20:54:43 +0100
+
 libcyaml (1.0.2-2) unstable; urgency=medium
 
   * Fix copyright year.
