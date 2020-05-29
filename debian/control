@@ -1,7 +1,7 @@
 Source: libcyaml
 Priority: optional
 Maintainer: Sudip Mukherjee <sudipm.mukherjee@gmail.com>
-Build-Depends: debhelper-compat (= 13), libyaml-dev, doxygen, graphviz
+Build-Depends: debhelper-compat (= 13), libyaml-dev, doxygen, graphviz, pkg-config
 Standards-Version: 4.5.0
 Section: libs
 Homepage: https://github.com/tlsa/libcyaml
