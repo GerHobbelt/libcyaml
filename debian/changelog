@@ -1,3 +1,12 @@
+libcyaml (1.0.2-4) unstable; urgency=medium
+
+  * Install examples.
+  * Add autopkgtest.
+  * Fix FTCBFS: Use pkg-config to locate libyaml. (Closes: #959523)
+    - Thanks to Helmut Grohne.
+
+ -- Sudip Mukherjee <sudipm.mukherjee@gmail.com>  Fri, 29 May 2020 13:46:34 +0100
+
 libcyaml (1.0.2-3) unstable; urgency=medium
 
   * Fix build on big-endian systems.
