@@ -16,6 +16,19 @@
 
 #include "util.h"
 
+#ifndef VERSION_MAJOR
+#define VERSION_MAJOR  2
+#endif
+#ifndef VERSION_MINOR 
+#define VERSION_MINOR  0
+#endif
+#ifndef VERSION_PATCH 
+#define VERSION_PATCH  0
+#endif
+#ifndef VERSION_DEVEL 
+#define VERSION_DEVEL  1
+#endif
+
 /** Flag that indicates a release in \ref cyaml_version. */
 #define CYAML_RELEASE_FLAG (1u << 31)
 
