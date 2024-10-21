@@ -140,13 +140,13 @@ static inline void cyaml__log(
 }
 
 /**
- * Check if comparason should be case sensitive.
+ * Check if comparison should be case sensitive.
  *
  * As described in the API, schema flags take priority over config flags.
  *
  * \param[in]  config  Client's CYAML configuration structure.
  * \param[in]  schema  The CYAML schema for the value to be compared.
- * \return Whether to use case-sensitive comparason.
+ * \return Whether to use case-sensitive comparison.
  */
 static inline bool cyaml__is_case_sensitive(
 		const cyaml_config_t *config,
@@ -170,7 +170,7 @@ static inline bool cyaml__is_case_sensitive(
  * Compare two strings.
  *
  * Depending on the client's configuration, and the value's schema,
- * this will do either a case-sensitive or case-insensitive comparason.
+ * this will do either a case-sensitive or case-insensitive comparison.
  *
  * \param[in]  config  Client's CYAML configuration structure.
  * \param[in]  schema  The CYAML schema for the value to be compared.
